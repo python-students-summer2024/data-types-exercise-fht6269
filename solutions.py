@@ -11,6 +11,11 @@ def calculate_profit():
     You can assume the user will enter only numeric characters, e.g. "3000", not "$3,000.00"
     The output should match the format of the following examples: "Profit: $690.00" for sales of $3,000, or "Profit: $2,300.00" for sales of $10,000, etc.
     """
+    total_sales = int(3000)
+    profit = total_sales * 0.23
+    print( "Profit:", profit, "for sales of 3,000")
+
+calculate_profit()
 
 
 def calculate_quotient_and_remainder():
@@ -22,7 +27,15 @@ def calculate_quotient_and_remainder():
       Enter number #2: 2
       2 goes into 5 a total of 2 times with a remainder of 1
     """
+    first_number_integer = input( "Your first number?")
+    second_number_integer = input( "Your second number?")
 
+    quotient = int(first_number_integer) // int(second_number_integer)
+    remainder = int(first_number_integer) % int(second_number_integer)
+
+    print(second_number_integer, "goes into", first_number_integer, "a total of", str(quotient), "times with a remainder of", str(remainder))
+
+calculate_quotient_and_remainder()
 
 def calculate_miles_per_gallon():
     """
@@ -35,6 +48,14 @@ def calculate_miles_per_gallon():
       Gas used (gallons): 25
       Miles per gallon: 2.2
     """
+    miles_driven = input( "How many miles did you drive?")
+    gas_used = input( "How many gallons of gas did you use?")
+    mpg = int(miles_driven) / int(gas_used)
+    print ("Miles driven:", miles_driven)
+    print ("Gas used (gallons):", gas_used)
+    print ("Miles per gallon:", mpg)
+
+calculate_miles_per_gallon()
 
 
 def align_text():
@@ -53,3 +74,19 @@ def align_text():
       Price #2: $   10.00
       Price #3: $ 9532.60
     """
+    price_one = float(input( "Enter price #1:"))
+    price_two = float(input( "Enter price #2:"))
+    price_three = float(input("Enter price #3:"))
+
+    x = format(price_one, '.2f')
+    y = format(price_two, '.2f')
+    z = format(price_three, '.2f')
+
+    print("Price #1: $", x)
+    print("Price #2: $", y)
+    print("Price #3: $", z)
+
+def main():
+    align_text()
+
+main()
